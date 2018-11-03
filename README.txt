@@ -1,3 +1,10 @@
+REMOVE SYSTEMD
+=====================
+http://without-systemd.org/wiki/index.php/How_to_remove_systemd_from_a_Debian_Stretch_installation
+-> Using sysvinit instead of systemd in Debian Stretch
+-> Optional steps
+
+
 APT
 ==================
 apt update && apt upgrade && apt install pkg-config gcc build-essential libmariadb-client-lgpl-dev libssl-dev psmisc
