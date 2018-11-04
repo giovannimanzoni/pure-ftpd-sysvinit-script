@@ -75,7 +75,7 @@ ARGON: $argon2id$v=19$m=65536,t=2,p=1$aYiTImqf4BZTpF2nl9Rq1w$f6A8OUZmprao8Uu/A/G
 so
 
 USE pureftpd; 
-INSERT INTO `ftpd` (`User`, `status`, `Password`, `Dir`, `ULBandwidth`, `DLBandwidth`, `comment`, `ipaccess`, `QuotaSize`, `QuotaFiles`) VALUES ('adminuser', '1', '$7$C6..../....TVzjdXXlCAXo0E1HIMMR3JySDwUyydKAB5u/fflzEI0$IaJ6X/t4Qo0YidIF.z.Uez6FV3Te6CW7kkWwdF/7ZT4', '/var/www/', '50000', '50000', '', '*', '100000', '0'); 
+INSERT INTO `ftpd` (`User`, `status`, `Password`, `Dir`, `ULBandwidth`, `DLBandwidth`, `comment`, `ipaccess`, `QuotaSize`, `QuotaFiles`) VALUES ('adminuser', '1', '$7$C6..../....7u9edvfXJ9dXqnWqDbsYMf8cIAIAwWcUOFHdkxM/ZS6$Tiv9SJlv7CiZ5OON4v7hAQOn400fSZQ9L.PscyEFVJC', '/var/www/', '50000', '50000', '', '*', '100000', '0'); 
 exit;
 
 
