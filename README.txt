@@ -70,12 +70,14 @@ INSERT QUERY ACCESS for virtual user
 =========================================
 #connect to your db and insert yopur query. For example one hash for the password H3ll0Th1s1sMyP4ssw0rd:
 SCRYPT: $7$C6..../....7u9edvfXJ9dXqnWqDbsYMf8cIAIAwWcUOFHdkxM/ZS6$Tiv9SJlv7CiZ5OON4v7hAQOn400fSZQ9L.PscyEFVJC
-ARGON: $argon2id$v=19$m=65536,t=2,p=1$aYiTImqf4BZTpF2nl9Rq1w$f6A8OUZmprao8Uu/A/Gymfh7G7/nqBx9BtPrR6ugh7w
+
+#DO NOT SET 65536 KiB of memory for Argon2, pure-ftp can not handle it
+ARGON2I: $argon2i$v=19$m=32768,t=4,p=1$c29tZXNhbHQ$v9etopt7JhNz9K0XNBdEwkiUQXtHx5qQrCv1N7zT5SM
 
 so
 
 USE pureftpd; 
-INSERT INTO `ftpd` (`User`, `status`, `Password`, `Dir`, `ULBandwidth`, `DLBandwidth`, `comment`, `ipaccess`, `QuotaSize`, `QuotaFiles`) VALUES ('adminuser', '1', '$7$C6..../....7u9edvfXJ9dXqnWqDbsYMf8cIAIAwWcUOFHdkxM/ZS6$Tiv9SJlv7CiZ5OON4v7hAQOn400fSZQ9L.PscyEFVJC', '/var/www/', '50000', '50000', '', '*', '100000', '0'); 
+INSERT INTO `ftpd` (`User`, `status`, `Password`, `Dir`, `ULBandwidth`, `DLBandwidth`, `comment`, `ipaccess`, `QuotaSize`, `QuotaFiles`) VALUES ('adminuser', '1', '$argon2i$v=19$m=32768,t=4,p=1$c29tZXNhbHQ$v9etopt7JhNz9K0XNBdEwkiUQXtHx5qQrCv1N7zT5SM', '/var/www/', '50000', '50000', '', '*', '100000', '0'); 
 exit;
 
 
