@@ -13,7 +13,7 @@
 PATH=/sbin:/bin:/usr/sbin:/usr/bin
 NAME=pure-ftpd
 DESC="pure-ftpd server"
-WRAPPER=/usr/local/sbin/pure-ftpd
+WRAPPER="/usr/local/sbin/pure-ftpd /etc/pure-ftpd.conf"
 CONFIG=/etc/pure-ftpd-db.conf
 
 # load LSB init-functions to get status_of_proc helper
@@ -27,7 +27,7 @@ DAEMON=/usr/local/sbin/pure-ftpd
 case "$1" in
   start)
         echo -n "Starting $DESC: "
-        start-stop-daemon --start --pidfile "$PIDFILE" --exec $WRAPPER -- -l mysql:$CONFIG -B
+        start-stop-daemon --start --pidfile "$PIDFILE" --exec $WRAPPER
 	echo "Done."
         ;;
   stop)
@@ -39,7 +39,7 @@ case "$1" in
         echo -n "Restarting $DESC: "
         start-stop-daemon --stop --oknodo --pidfile "$PIDFILE"
         sleep 1
-        start-stop-daemon --start --pidfile "$PIDFILE" --exec $WRAPPER -- -l mysql:$CONFIG -B
+        start-stop-daemon --start --pidfile "$PIDFILE" --exec $WRAPPER
 	echo "Done."
         ;;
   status)
